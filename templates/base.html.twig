@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale }}">
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
-
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>{% block title %}{% endblock %} · {{ app_name }}</title>
+        <link rel="stylesheet" href="{{ asset('assets/stylesheets/bootstrap.min.css') }}">
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('assets/stylesheets/app.min.css') }}">
     </head>
     <body>
         {% block body %}{% endblock %}
+        <script src="{{ asset('assets/javascripts/jquery.min.js') }}"></script>
+        <script src="{{ asset('assets/javascripts/bootstrap.bundle.min.js') }}"></script>
+        {% block javascripts %}{% endblock %}
     </body>
 </html>

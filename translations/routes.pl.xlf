@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="pl" target-language="pl" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id=".vVLVOQ" resname="app_map_index">
+        <source>app_map_index</source>
+        <target>Mapa miejsc</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

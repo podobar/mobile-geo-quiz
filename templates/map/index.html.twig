@@ -1,0 +1,36 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}{{ 'app_map_index'|trans({}, 'routes') }}{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('assets/stylesheets/leaflet.min.css') }}">
+<style>
+    html, body, section#mainSection {
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+    }
+    #map {
+        width: auto;
+        height: 100%;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="map"></div>
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('assets/javascripts/leaflet.min.js') }}"></script>
+<script>
+    var map = L.map('map').setView([52.2324, 21.0065], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+    }).addTo(map);
+    L.control.attribution({
+        position: 'topright'
+    }).addTo(map);
+</script>
+{% endblock %}
