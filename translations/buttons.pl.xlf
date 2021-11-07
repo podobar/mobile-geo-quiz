@@ -5,9 +5,21 @@
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
+      <trans-unit id="y45Kzfu" resname="forgot_password">
+        <source>forgot_password</source>
+        <target>Zapomniałem hasła</target>
+      </trans-unit>
       <trans-unit id="9GluP_Z" resname="sign_in">
         <source>sign_in</source>
         <target>Zaloguj się</target>
+      </trans-unit>
+      <trans-unit id="Ri_o8Q3" resname="sign_out">
+        <source>sign_out</source>
+        <target>Wyloguj się</target>
+      </trans-unit>
+      <trans-unit id="cQTa6mh" resname="sign_up">
+        <source>sign_up</source>
+        <target>Zarejestruj się</target>
       </trans-unit>
     </body>
   </file>

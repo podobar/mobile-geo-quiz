@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'app_login'|trans({}, 'routes') }}{% endblock %}
+{% block body_attributes %}class="bg-primary"{% endblock %}
+
+{% block body %}
+<div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+        <main>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5">
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card-header"><h3 class="text-center font-weight-light my-4">{{ app_name }}</h3></div>
+                            <div class="card-body">
+                                <form method="post">
+                                    {% if error %}
+                                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                    {% endif %}
+                                    <div class="form-group">
+                                        <label class="small mb-1" for="inputEmailAddress">{{ 'user.username'|trans({}, 'forms') }}</label>
+                                        <input type="text" class="form-control py-4" name="username" id="inputUsername" value="{{ last_username }}" autocomplete="username" required autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="small mb-1" for="inputPassword">{{ 'user.password'|trans({}, 'forms') }}</label>
+                                        <input type="password" class="form-control py-4" name="password" id="inputPassword" autocomplete="current-password" required>
+                                    </div>
+                                    <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                                        <a class="small" href="#">{{ 'forgot_password'|trans({}, 'buttons') }}</a>
+                                        <button type="submit" class="btn btn-primary">{{ 'sign_in'|trans({}, 'buttons') }}</a>
+                                    </div>
+                                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                </form>
+                            </div>
+                            <div class="card-footer text-center">
+                                <div class="small"><a href="#">{{ 'sign_up'|trans({}, 'buttons') }}</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    {#<div id="layoutAuthentication_footer">
+        <footer class="py-4 bg-light mt-auto">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted">Copyright &copy; Your Website 2021</div>
+                    <div>
+                        <a href="#">Privacy Policy</a>
+                        &middot;
+                        <a href="#">Terms &amp; Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>#}
+</div>
+{% endblock %}

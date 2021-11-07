@@ -5,13 +5,13 @@
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
-      <trans-unit id=".vVLVOQ" resname="app_map_index">
-        <source>app_map_index</source>
-        <target>Mapa miejsc</target>
+      <trans-unit id="LboIWLZ" resname="user.username">
+        <source>user.username</source>
+        <target>Nazwa użytkownika</target>
       </trans-unit>
-      <trans-unit id="pJUZhar" resname="app_login">
-        <source>app_login</source>
-        <target>Logowanie</target>
+      <trans-unit id="pVZ4m.T" resname="user.password">
+        <source>user.password</source>
+        <target>Hasło</target>
       </trans-unit>
     </body>
   </file>
