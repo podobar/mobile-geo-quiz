@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'app_register'|trans({}, 'routes') }}{% endblock %}
+{% block body_attributes %}class="bg-info"{% endblock %}
+
+{% block body %}
+<div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+        <main>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5">
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card-header"><h3 class="text-center font-weight-light mt-3 mb-2">{{ app_name }}</h3><h5 class="text-center font-weight-light mt-2 mb-3">{{ 'app_register'|trans({}, 'routes') }}</h5></div>
+                            <div class="card-body">
+                                <form method="post">
+                                    {{ form_start(registrationForm) }}
+                                        {{ form_row(registrationForm.username) }}
+                                        {{ form_row(registrationForm.plainPassword) }}
+
+                                        <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                                            <button type="submit" class="btn btn-primary">{{ 'sign_up'|trans({}, 'buttons') }}</button>
+                                            <a href="{{ path('app_map_index') }}" class="btn btn-secondary">{{ 'app_map_index'|trans({}, 'routes') }}</a>
+                                        </div>
+                                    {{ form_end(registrationForm) }}
+                                </form>
+                            </div>
+                            <div class="card-footer text-center">
+                                <div class="small"><a href="{{ path('app_login') }}">{{ 'sign_in'|trans({}, 'buttons') }}</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+{% endblock %}

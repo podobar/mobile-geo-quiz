@@ -8,10 +8,12 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 {% if app.user %}
-                <li class="nav-item nav-link text-secondary">{{ 'hello'|trans({username: app.user.username}, 'messages') }}{% if points is defined %} ({{ 'total_points'|trans({points: points}, 'messages') }}){% endif %}</li>
+                <li class="nav-item nav-link text-secondary">{{ 'hello'|trans({username: app.user.username}, 'messages') }}</li>
                 <li class="nav-item"><a class="nav-link" href="{{ path('app_ranking_index') }}">{{ 'app_ranking_index'|trans({}, 'routes') }}</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ path('app_logout') }}">{{ 'sign_out'|trans({}, 'buttons') }}</a></li>
                 {% else %}
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_ranking_index') }}">{{ 'app_ranking_index'|trans({}, 'routes') }}</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_register') }}">{{ 'sign_up'|trans({}, 'buttons') }}</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ path('app_login') }}">{{ 'sign_in'|trans({}, 'buttons') }}</a></li>
                 {% endif %}
             </ul>

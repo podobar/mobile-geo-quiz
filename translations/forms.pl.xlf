@@ -5,6 +5,18 @@
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
+      <trans-unit id="ymtz6HD" resname="ranking.place">
+        <source>ranking.place</source>
+        <target>#</target>
+      </trans-unit>
+      <trans-unit id="63QuH2R" resname="ranking.points">
+        <source>ranking.points</source>
+        <target>Punkty</target>
+      </trans-unit>
+      <trans-unit id="PFGUe4j" resname="ranking.username">
+        <source>ranking.username</source>
+        <target>Gracz</target>
+      </trans-unit>
       <trans-unit id="LboIWLZ" resname="user.username">
         <source>user.username</source>
         <target>Nazwa użytkownika</target>
@@ -13,13 +25,9 @@
         <source>user.password</source>
         <target>Hasło</target>
       </trans-unit>
-      <trans-unit id="PFGUe4j" resname="ranking.username">
-        <source>ranking.username</source>
-        <target>Gracz</target>
-      </trans-unit>
-      <trans-unit id="63QuH2R" resname="ranking.points">
-        <source>ranking.points</source>
-        <target>Punkty</target>
+      <trans-unit id="bzcyCDb" resname="user.plainPassword">
+        <source>user.plainPassword</source>
+        <target>Hasło</target>
       </trans-unit>
     </body>
   </file>

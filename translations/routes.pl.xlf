@@ -17,6 +17,10 @@
         <source>app_ranking_index</source>
         <target>Ranking</target>
       </trans-unit>
+      <trans-unit id="cPBrM._" resname="app_register">
+        <source>app_register</source>
+        <target>Rejestracja</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -24,7 +24,6 @@ class MapController extends AbstractController
         return $this->render('map/index.html.twig', [
             'places' => $placeRepository->findAll(),
             'completedPlaces' => $completedPlaces,
-            'points' => $userAnswerRepository->findUserPoints($this->getUser()->getId()),
         ]);
     }
 }

@@ -26,6 +26,7 @@ class UserAnswerRepository extends ServiceEntityRepository
             ->select('u.username, COUNT(u.id) AS points')
             ->innerJoin('ua.user', 'u')
             ->andWhere('u.roles LIKE \'%ROLE_PLAYER%\'')
+            ->andHaving('points > 0')
             ->orderBy('points', 'DESC')
             ->groupBy('u.username')
             ->getQuery()
