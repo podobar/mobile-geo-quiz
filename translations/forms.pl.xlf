@@ -13,6 +13,14 @@
         <source>user.password</source>
         <target>Hasło</target>
       </trans-unit>
+      <trans-unit id="PFGUe4j" resname="ranking.username">
+        <source>ranking.username</source>
+        <target>Gracz</target>
+      </trans-unit>
+      <trans-unit id="63QuH2R" resname="ranking.points">
+        <source>ranking.points</source>
+        <target>Punkty</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

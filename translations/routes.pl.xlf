@@ -5,13 +5,17 @@
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
+      <trans-unit id="pJUZhar" resname="app_login">
+        <source>app_login</source>
+        <target>Logowanie</target>
+      </trans-unit>
       <trans-unit id=".vVLVOQ" resname="app_map_index">
         <source>app_map_index</source>
         <target>Mapa miejsc</target>
       </trans-unit>
-      <trans-unit id="pJUZhar" resname="app_login">
-        <source>app_login</source>
-        <target>Logowanie</target>
+      <trans-unit id="ht3ALhj" resname="app_ranking_index">
+        <source>app_ranking_index</source>
+        <target>Ranking</target>
       </trans-unit>
     </body>
   </file>

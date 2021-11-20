@@ -19,6 +19,33 @@ class UserAnswerRepository extends ServiceEntityRepository
         parent::__construct($registry, UserAnswer::class);
     }
 
+    public function findRanking() {
+        $query = $this->createQueryBuilder('ua');
+
+        return $query
+            ->select('u.username, COUNT(u.id) AS points')
+            ->innerJoin('ua.user', 'u')
+            ->andWhere('u.roles LIKE \'%ROLE_PLAYER%\'')
+            ->orderBy('points', 'DESC')
+            ->groupBy('u.username')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function findUserPoints(int $userId) {
+        $query = $this->createQueryBuilder('ua');
+
+        return $query
+            ->select('COUNT(ua.user) AS points')
+            ->innerJoin('ua.user', 'u')
+            ->andWhere('u.id = :userId')
+            ->setParameter('userId', $userId)
+            ->getQuery()
+            ->getSingleScalarResult()
+        ;
+    }
+
     // /**
     //  * @return UserAnswer[] Returns an array of UserAnswer objects
     //  */

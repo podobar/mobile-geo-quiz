@@ -1,0 +1,29 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}{{ 'app_ranking_index'|trans({}, 'routes') }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h5 class="text-center my-3">{{ 'app_ranking_index'|trans({}, 'routes') }}</h5>
+            <table class="table table-sm table-bordered table-striped mb-5">
+                <thead class="thead-light">
+                    <tr>
+                        <th>{{ 'ranking.username'|trans({}, 'forms') }}</th>
+                        <th>{{ 'ranking.points'|trans({}, 'forms') }}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in ranking %}
+                    <tr>
+                        <td>{{ row.username }}</td>
+                        <td>{{ row.points }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table><br>
+        </div>
+    </div>
+</div>
+{% endblock %}

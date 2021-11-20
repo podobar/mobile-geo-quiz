@@ -21,6 +21,10 @@
         <source>too_far_away</source>
         <target>Jesteś za daleko. Podejdź bliżej miejsca i odśwież stronę.</target>
       </trans-unit>
+      <trans-unit id="BoQ.fL9" resname="total_points">
+        <source>total_points</source>
+        <target>points pkt</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
