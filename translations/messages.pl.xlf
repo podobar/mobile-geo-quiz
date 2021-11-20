@@ -9,6 +9,18 @@
         <source>hello</source>
         <target>Witaj, username</target>
       </trans-unit>
+      <trans-unit id="xKoP5iN" resname="locating">
+        <source>locating</source>
+        <target>Lokalizowanie...</target>
+      </trans-unit>
+      <trans-unit id="pXW3mGi" resname="score">
+        <source>score</source>
+        <target>Zdobyłeś points punktów!</target>
+      </trans-unit>
+      <trans-unit id="1wxuGc3" resname="too_far_away">
+        <source>too_far_away</source>
+        <target>Jesteś za daleko. Podejdź bliżej miejsca i odśwież stronę.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -1,0 +1,8 @@
+{{ form_start(form) }}
+{% for element in form %}
+{% if 'question' in element.vars.name %}
+{{ form_row(element) }}
+{% endif %}
+{% endfor %}
+<button type="submit" class="btn btn-primary">{{ 'send'|trans({}, 'buttons') }}</button>
+{{ form_end(form) }}

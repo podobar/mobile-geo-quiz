@@ -19,6 +19,22 @@
 
 {% block content %}
 <div id="map"></div>
+<div class="modal fade" id="placeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="placeModalTitle">Nazwa miejsca</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                <a href="" id="placeModalQuizLink" class="btn btn-primary">Rozwiąż test</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block javascripts %}
@@ -32,5 +48,40 @@
     L.control.attribution({
         position: 'topright'
     }).addTo(map);
+
+    var pin = L.icon({
+        iconUrl: '{{ asset('assets/graphics/pin.png') }}',
+        iconSize: [24, 41],
+        iconAnchor: [12, 41],
+    });
+    var completedPin = L.icon({
+        iconUrl: '{{ asset('assets/graphics/completed_pin.png') }}',
+        iconSize: [24, 41],
+        iconAnchor: [12, 41],
+    });
+    {% for place in places %}
+    L.marker([{{ place.latitude }}, {{ place.longitude }}], {icon: {{ (place.id in completedPlaces) ? 'completedPin' : 'pin' }}}).addTo(map).on('click', function(e) {
+        $('#placeModalTitle').html('{{ place.name }}');
+        $("#placeModalQuizLink").attr('href', '{{ path('app_place_quiz', {id: place.id}) }}');
+        $('#placeModal').modal('show');
+    });
+
+    var currentAccuracy;
+    function onLocationFound(e) {
+        if (currentAccuracy) {
+            map.removeLayer(currentAccuracy);
+        }
+
+        var radius = e.accuracy / 2;
+
+        currentAccuracy = L.circle(e.latlng, radius).addTo(map);
+    }
+    map.on('locationfound', onLocationFound);
+    function locate() {
+        map.locate({setView: true});
+    }
+    locate();
+    setInterval(locate, 3000);
+    {% endfor %}
 </script>
 {% endblock %}

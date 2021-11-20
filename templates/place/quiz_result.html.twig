@@ -1,0 +1,17 @@
+{% extends 'front.html.twig' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h5 class="text-center mt-3">{{ place.name }}</h5><hr>
+            {% for message in app.flashes('result') %}
+            <div class="alert alert-info mb-3" role="alert">
+                <i class="fas fa-fw fa-info-triangle"></i><span class="font-weight-bold ml-2">{{ message|trans({}, 'messages') }}</span>
+            </div>
+            {% endfor %}
+            <a href="{{ path('app_map_index') }}" class="btn btn-primary">{{ 'back_to_map'|trans({}, 'buttons') }}</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

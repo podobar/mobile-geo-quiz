@@ -5,9 +5,17 @@
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
+      <trans-unit id="back_to_map" resname="back_to_map">
+        <source>back_to_map</source>
+        <target>Wróć do mapy</target>
+      </trans-unit>
       <trans-unit id="y45Kzfu" resname="forgot_password">
         <source>forgot_password</source>
         <target>Zapomniałem hasła</target>
+      </trans-unit>
+      <trans-unit id="J84dG.Q" resname="send">
+        <source>send</source>
+        <target>Wyślij</target>
       </trans-unit>
       <trans-unit id="9GluP_Z" resname="sign_in">
         <source>sign_in</source>

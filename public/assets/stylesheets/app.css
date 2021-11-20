@@ -121,6 +121,9 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+fieldset .custom-control-label {
+    font-weight: normal !important;
+}
 #layoutAuthentication {
     display: flex;
     flex-direction: column;
